@@ -9,9 +9,9 @@
   /*Color mode HSL(hue, saturation, lightness)*/
   /*
         Purple: hsl(250, 66%, 75%)
-        Blue: hsl(207, 90%, 72%)
-        Pink: hsl(356, 66%, 75%)
-        Teal: hsl(174, 63%, 62%)
+        Blue:   hsl(207, 90%, 72%)
+        Pink:   hsl(356, 66%, 75%)
+        Teal:   hsl(174, 63%, 62%)
   */
   --first-hue: 250;
   --sat: 66%;
@@ -110,6 +110,41 @@ img {
 }
 
 /*=============== THEME ===============*/
+.container {
+  min-width: 968px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.section {
+  padding: 4.5rem 0 1rem;
+}
+
+.section__title, .section__subtitle {
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-bottom: 2rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
 
 
 /*========== Variables Dark theme ==========*/
@@ -159,9 +194,70 @@ img {
 }
 
 /*=============== HEADER & NAV===============*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--body-color);
+  z-index: var(--z-fixed);
+}
+
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--first-color);
+  font-weight: var(--font-medium);
+  transition: .4s;
+}
+
+.nav__logo:hover {
+  color: var(--first-color-alt);
+}
+
+.nav__menu {
+  position: fixed;
+  bottom: 1rem;
+  background-color: hsla(var(--second-hue), 32%, 16%, 0.8);
+  width: 90%;
+  border-radius: 4rem;
+  padding: 1rem 2.25rem;
+  backdrop-filter: blur(10px);
+}
+
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__link {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  padding: .4rem;
+  display: flex;
+  border-radius: 5rem;
+}
+
+
 
 
 /* Active link */
+.active-link {
+  background: linear-gradient(180deg, 
+              hsla(var(--first-hue), var(--sat), var(--lig), 1 ),
+              hsla(var(--first-hue), var(--sat), var(--lig), .2 ));
+  box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4 ))
+  
+
+}
+
+
 
 
 /* Change background header */
