@@ -110,52 +110,85 @@ img {
 }
 
 /*=============== THEME ===============*/
-.container {
-  max-width: 968px;
-  margin-left: 1rem;
-  margin-right: 1rem;
+.change-theme {
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: .3s;
 }
 
-.grid {
-  display: grid;
-  gap: 1.25rem;
-}
-
-.main {
-  overflow: hidden;
-}
-
-.section {
-  padding: 4.5rem 0 1rem;
-}
-
-.section__title, .section__subtitle {
-  text-align: center;
-}
-
-.section__title {
-  font-size: var(--h2-font-size);
+.change-theme:hover {
   color: var(--first-color);
-  margin-bottom: 2rem;
 }
-
-.section__subtitle {
-  display: block;
-  font-size: var(--smaller-font-size);
-  color: var(--text-color-light);
-}
-
 
 
 /*========== Variables Dark theme ==========*/
-
+body.light-theme {
+  --title-color: hsl(var(--second-hue), 15%, 15%);
+  --text-color: hsl(var(--second-hue), 8%, 35%);
+  --body-color: hsl(var(--second-hue), 100%, 99%);
+  --container-color: #fff;
+}
 
 /*========== 
     Color changes in some parts of 
     the website, in light theme
 ==========*/
 
+.light-theme .scroll-header {
+  box-shadow: 0 2px 4px hsla(0, 0%, 1%, .1);
+}
 
+.light-theme .nav__menu {
+  background-color: hsla(var(--second-hue), 32%, 90%, .8); ;
+}
+
+.light-theme .section__subtitle {
+  color: var(--text-color);
+}
+
+.light-theme .home__social-link {
+  box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, .1);
+}
+
+.light-theme .home__social::after,
+.light-theme .footer__social-link {
+  background-color: var(--title-color);
+}
+
+.light-theme .home__social-link,
+.light-theme .home__scroll,
+.light-theme .button,
+.light-theme .button:hover,
+.light-theme .active__work,
+.light-theme .footer__title,
+.light-theme .footer__link,
+.light-theme .footer__copy {
+  color: var(--title-color);
+}
+
+.light-theme .about__box {
+  box-shadow: 0 2px 8px hsla(var(--second-hue), 48%, 8%, .1);
+}
+
+.light-theme .skills__content,
+.light-theme .services__card,
+.light-theme .work__card,
+.light-theme .testimonial__card,
+.light-theme .contact__card {
+  box-shadow: 0 2px 16px hsla(var(--second-hue), 48%, 8%, .1);
+}
+
+.light-theme::-webkit-scrollbar {
+  background-color: hsl(var(--second-hue), 8%, 66%);;
+}
+
+.light-theme::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--second-hue), 8%, 54%);;
+}
+
+.light-theme::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--second-hue), 8%, 44%);;
+}
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 968px;
@@ -201,6 +234,7 @@ img {
   width: 100%;
   background-color: var(--body-color);
   z-index: var(--z-fixed);
+  transition: .4s;
 }
 
 .nav {
@@ -228,6 +262,7 @@ img {
   border-radius: 4rem;
   padding: 1rem 2.25rem;
   backdrop-filter: blur(10px);
+  transition: .4s;
 }
 
 .nav__list {
@@ -249,7 +284,8 @@ img {
   background: linear-gradient(180deg, 
               hsla(var(--first-hue), var(--sat), var(--lig), 1 ),
               hsla(var(--first-hue), var(--sat), var(--lig), .2 ));
-  box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4 ))
+  box-shadow: 0 0 16px hsla(var(--first-hue), var(--sat), var(--lig), .4 );
+  color: var(--title-color);
   
 
 }
@@ -446,7 +482,7 @@ img {
   padding-top: 1rem;
 }
 
-.skills_content {
+.skills__content {
   background-color: var(--container-color);
   padding: 1.5rem;
   border-radius: 1.25rem;
